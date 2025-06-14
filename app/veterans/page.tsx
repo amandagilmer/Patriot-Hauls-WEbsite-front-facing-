@@ -9,17 +9,26 @@ export default function VeteransPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b-2 border-[#C41E3A] bg-[#1C1C1C] text-white">
-        <div className="container flex h-16 items-center">
+        <div className="container flex h-16 items-center justify-between">
           <MainNav />
-          <div className="ml-auto flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Link
               href="/operators"
-              className="text-sm font-bold text-[#FF6B35] transition-colors hover:text-white font-['Oswald',_sans-serif]"
+              className="text-xs sm:text-sm font-bold text-[#FF6B35] transition-colors hover:text-white font-['Oswald',_sans-serif] hidden sm:block"
             >
               JOIN THE NETWORK
             </Link>
-            <Button asChild className="bg-[#C41E3A] hover:bg-[#C41E3A]/90 font-bold">
-              <Link href="/contact">CONTACT US</Link>
+            <Link
+              href="/operators"
+              className="text-xs font-bold text-[#FF6B35] transition-colors hover:text-white font-['Oswald',_sans-serif] sm:hidden"
+            >
+              JOIN
+            </Link>
+            <Button
+              asChild
+              className="bg-[#C41E3A] hover:bg-[#C41E3A]/90 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2"
+            >
+              <Link href="/contact">CONTACT</Link>
             </Button>
           </div>
         </div>
@@ -50,22 +59,29 @@ export default function VeteransPage() {
               </h1>
               <p className="text-xl md:text-2xl text-[#C0C0C0] font-['Roboto_Condensed',_sans-serif] mb-8 leading-relaxed">
                 They answered the call to defend America. Now they're answering the call to rebuild it - one trailer,
-                one community, one brotherhood at a time.
+                one community, one brotherhood at a time.{" "}
+                <span className="text-[#C41E3A] font-bold">
+                  Local businesses. United branding. Powered by Patriot Hauls.
+                </span>
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-black font-bold text-xl px-10 py-6"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white font-bold text-xl px-10 py-6"
                 >
-                  <Link href="#veteran-operators">MEET OUR VETERANS</Link>
+                  <Link href="#veteran-operators" className="text-white hover:text-white">
+                    MEET OUR VETERANS
+                  </Link>
                 </Button>
                 <Button
                   asChild
                   size="lg"
-                  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#1C1C1C] font-bold text-xl px-10 py-6"
+                  className="bg-[#C41E3A] hover:bg-[#C41E3A]/90 text-white font-bold text-xl px-10 py-6"
                 >
-                  <Link href="/join">VETERAN? JOIN US</Link>
+                  <Link href="/join" className="text-white hover:text-white">
+                    VETERAN? JOIN US
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -181,11 +197,12 @@ export default function VeteransPage() {
 
             <div className="bg-[#1C1C1C]/60 p-8 rounded-lg text-center border-2 border-[#C41E3A]">
               <h3 className="text-2xl font-bold text-white mb-4 font-['Oswald',_sans-serif]">
-                MORE THAN BUSINESS - IT'S BROTHERHOOD
+                NOT A MARKETPLACE - A BROTHERHOOD
               </h3>
               <p className="text-[#C0C0C0] mb-6 font-['Roboto_Condensed',_sans-serif] text-lg max-w-3xl mx-auto">
-                When you rent from a veteran operator, you're not just getting a trailer - you're supporting someone who
-                served our country and is now serving our communities. That's the Patriot Hauls difference.
+                When you rent from a veteran operator, you're supporting a local business owner who served our country.
+                These aren't corporate employees or marketplace vendors - they're established local businesses united
+                under the Patriot Hauls brand. That's the difference between renting and supporting.
               </p>
             </div>
           </div>
@@ -284,7 +301,7 @@ export default function VeteransPage() {
                 HOW WE SUPPORT OUR VETERANS
               </h2>
               <p className="text-xl text-white/90 font-['Roboto_Condensed',_sans-serif] leading-relaxed">
-                Saying "thank you for your service" isn't enough. We put our money where our mouth is.
+                We honor military service through recognition, connections, and opportunities - not handouts.
               </p>
             </div>
 
@@ -295,25 +312,26 @@ export default function VeteransPage() {
                   <li className="flex items-start">
                     <Zap className="h-5 w-5 text-[#FF6B35] mr-3 mt-1 flex-shrink-0" />
                     <span>
-                      <strong>Reduced Network Fees:</strong> Veterans pay 50% less to join our network
+                      <strong>Reduced Setup Fee:</strong> Veterans pay 25% less on initial network setup costs
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Zap className="h-5 w-5 text-[#FF6B35] mr-3 mt-1 flex-shrink-0" />
                     <span>
-                      <strong>Priority Support:</strong> Veterans get first priority for network assistance
+                      <strong>Application Priority:</strong> Veterans get expedited review for network applications
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Zap className="h-5 w-5 text-[#FF6B35] mr-3 mt-1 flex-shrink-0" />
                     <span>
-                      <strong>Equipment Financing:</strong> Special financing options for trailer purchases
+                      <strong>Veteran Recognition:</strong> Special veteran badges and marketing materials included
                     </span>
                   </li>
                   <li className="flex items-start">
                     <Zap className="h-5 w-5 text-[#FF6B35] mr-3 mt-1 flex-shrink-0" />
                     <span>
-                      <strong>Marketing Support:</strong> Free promotional materials highlighting veteran status
+                      <strong>Business Resources:</strong> Access to veteran business development resources and
+                      partnerships
                     </span>
                   </li>
                 </ul>
@@ -382,14 +400,18 @@ export default function VeteransPage() {
                   size="lg"
                   className="bg-[#C41E3A] hover:bg-[#C41E3A]/80 text-white font-bold text-xl px-10 py-6"
                 >
-                  <Link href="/join">JOIN AS VETERAN OPERATOR</Link>
+                  <Link href="/join" className="text-white hover:text-white">
+                    JOIN AS VETERAN OPERATOR
+                  </Link>
                 </Button>
                 <Button
                   asChild
                   size="lg"
-                  className="bg-transparent border-2 border-[#FF6B35] text-[#FF6B35] hover:bg-[#FF6B35] hover:text-black font-bold text-xl px-10 py-6"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white font-bold text-xl px-10 py-6"
                 >
-                  <Link href="/operators">FIND VETERAN OPERATORS</Link>
+                  <Link href="/operators" className="text-white hover:text-white">
+                    FIND VETERAN OPERATORS
+                  </Link>
                 </Button>
               </div>
               <div className="text-center">
@@ -408,22 +430,26 @@ export default function VeteransPage() {
       {/* Footer */}
       <footer className="bg-[#1C1C1C] text-white py-12 border-t-4 border-[#C41E3A]">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4 font-['Bebas_Neue',_sans-serif] text-[#C41E3A]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 font-['Bebas_Neue',_sans-serif] text-[#C41E3A]">
                 PATRIOT HAULS NETWORK
               </h3>
-              <p className="text-[#C0C0C0] font-['Roboto_Condensed',_sans-serif] mb-4">
+              <p className="text-[#C0C0C0] font-['Roboto_Condensed',_sans-serif] mb-4 text-sm sm:text-base">
                 Veteran-led. Brotherhood-backed. America-strong.
               </p>
               <div className="flex items-center text-[#B7941D] font-bold">
-                <Flag className="h-5 w-5 mr-2" />
-                <span className="font-['Oswald',_sans-serif]">SERVED TOGETHER. SUCCEED TOGETHER.</span>
+                <Flag className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                <span className="font-['Oswald',_sans-serif] text-xs sm:text-sm">
+                  SERVED TOGETHER. SUCCEED TOGETHER.
+                </span>
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">Veteran Support</h3>
-              <ul className="space-y-2 font-['Roboto_Condensed',_sans-serif]">
+              <h3 className="text-base sm:text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">
+                Veteran Support
+              </h3>
+              <ul className="space-y-2 font-['Roboto_Condensed',_sans-serif] text-sm">
                 <li>
                   <Link href="/veterans" className="text-[#C0C0C0] hover:text-white">
                     Veteran Operators
@@ -447,8 +473,10 @@ export default function VeteransPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">Military Branches</h3>
-              <ul className="space-y-2 font-['Roboto_Condensed',_sans-serif]">
+              <h3 className="text-base sm:text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">
+                Military Branches
+              </h3>
+              <ul className="space-y-2 font-['Roboto_Condensed',_sans-serif] text-sm">
                 <li className="text-[#C0C0C0]">Army Strong</li>
                 <li className="text-[#C0C0C0]">Navy Pride</li>
                 <li className="text-[#C0C0C0]">Marine Corps</li>
@@ -458,8 +486,10 @@ export default function VeteransPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">Battle Cry</h3>
-              <div className="space-y-3 font-['Roboto_Condensed',_sans-serif]">
+              <h3 className="text-base sm:text-lg font-bold mb-4 font-['Oswald',_sans-serif] text-[#FF6B35]">
+                Battle Cry
+              </h3>
+              <div className="space-y-2 sm:space-y-3 font-['Roboto_Condensed',_sans-serif] text-sm">
                 <p className="text-[#C0C0C0] font-bold">"SERVED TOGETHER"</p>
                 <p className="text-[#C0C0C0]">"SUCCEED TOGETHER"</p>
                 <p className="text-[#C0C0C0]">"ONCE A WARRIOR"</p>
@@ -467,12 +497,12 @@ export default function VeteransPage() {
               </div>
             </div>
           </div>
-          <div className="border-t border-[#333] mt-8 pt-8 text-center">
-            <p className="text-[#C0C0C0] font-['Roboto_Condensed',_sans-serif] mb-2">
+          <div className="border-t border-[#333] mt-8 pt-6 sm:pt-8 text-center">
+            <p className="text-[#C0C0C0] font-['Roboto_Condensed',_sans-serif] mb-2 text-xs sm:text-sm">
               &copy; {new Date().getFullYear()} Patriot Hauls Network. Honoring those who served by supporting those who
               serve.
             </p>
-            <p className="text-[#B7941D] font-bold font-['Oswald',_sans-serif]">
+            <p className="text-[#B7941D] font-bold font-['Oswald',_sans-serif] text-sm sm:text-base">
               "FREEDOM ISN'T FREE - BUT BROTHERHOOD IS PRICELESS"
             </p>
           </div>
