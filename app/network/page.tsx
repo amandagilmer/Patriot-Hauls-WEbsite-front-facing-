@@ -82,6 +82,117 @@ export default function NetworkPage() {
           </div>
         </section>
 
+        {/* Sign Up Section */}
+        <section className="py-16 bg-white border-b-2 border-[#C41E3A]">
+          <div className="container">
+            <div className="max-w-2xl mx-auto text-center">
+              <h2 className="text-3xl font-bold tracking-tight font-['Bebas_Neue',_sans-serif] text-[#1C1C1C] mb-4">
+                JOIN THE BROTHERHOOD TODAY
+              </h2>
+              <p className="text-lg text-[#4F5D75] mb-8 font-['Roboto_Condensed',_sans-serif]">
+                Ready to connect with vetted patriots and local business champions? Start building your network now.
+              </p>
+
+              <div className="bg-[#F5F5F5] p-8 rounded-lg border-2 border-[#E5E5E5]">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="first-name"
+                        className="text-sm font-bold text-[#1C1C1C] font-['Oswald',_sans-serif]"
+                      >
+                        FIRST NAME
+                      </label>
+                      <input
+                        type="text"
+                        id="first-name"
+                        className="w-full px-4 py-3 border-2 border-[#E5E5E5] rounded-md focus:border-[#C41E3A] focus:outline-none font-['Roboto_Condensed',_sans-serif]"
+                        placeholder="Your first name"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label
+                        htmlFor="last-name"
+                        className="text-sm font-bold text-[#1C1C1C] font-['Oswald',_sans-serif]"
+                      >
+                        LAST NAME
+                      </label>
+                      <input
+                        type="text"
+                        id="last-name"
+                        className="w-full px-4 py-3 border-2 border-[#E5E5E5] rounded-md focus:border-[#C41E3A] focus:outline-none font-['Roboto_Condensed',_sans-serif]"
+                        placeholder="Your last name"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-bold text-[#1C1C1C] font-['Oswald',_sans-serif]">
+                      EMAIL ADDRESS
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-4 py-3 border-2 border-[#E5E5E5] rounded-md focus:border-[#C41E3A] focus:outline-none font-['Roboto_Condensed',_sans-serif]"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="location" className="text-sm font-bold text-[#1C1C1C] font-['Oswald',_sans-serif]">
+                      YOUR LOCATION
+                    </label>
+                    <input
+                      type="text"
+                      id="location"
+                      className="w-full px-4 py-3 border-2 border-[#E5E5E5] rounded-md focus:border-[#C41E3A] focus:outline-none font-['Roboto_Condensed',_sans-serif]"
+                      placeholder="City, State"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="interest" className="text-sm font-bold text-[#1C1C1C] font-['Oswald',_sans-serif]">
+                      I'M INTERESTED IN
+                    </label>
+                    <select
+                      id="interest"
+                      className="w-full px-4 py-3 border-2 border-[#E5E5E5] rounded-md focus:border-[#C41E3A] focus:outline-none font-['Roboto_Condensed',_sans-serif]"
+                    >
+                      <option value="">Select your interest</option>
+                      <option value="renting">Renting trailers</option>
+                      <option value="becoming-operator">Becoming an operator</option>
+                      <option value="both">Both renting and operating</option>
+                      <option value="networking">Networking with operators</option>
+                    </select>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <input
+                      type="checkbox"
+                      id="veteran"
+                      className="mt-1 h-4 w-4 text-[#C41E3A] border-2 border-[#E5E5E5] rounded focus:ring-[#C41E3A]"
+                    />
+                    <label htmlFor="veteran" className="text-sm text-[#4F5D75] font-['Roboto_Condensed',_sans-serif]">
+                      I am a military veteran
+                    </label>
+                  </div>
+
+                  <Button className="w-full bg-[#C41E3A] hover:bg-[#C41E3A]/90 text-white font-bold text-lg py-4">
+                    JOIN THE NETWORK
+                  </Button>
+                </form>
+
+                <p className="text-xs text-[#4F5D75] mt-4 font-['Roboto_Condensed',_sans-serif]">
+                  By joining, you agree to our network standards and brotherhood values.
+                  <Link href="/terms" className="text-[#C41E3A] hover:underline">
+                    Terms & Conditions
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Network Stats */}
         <section className="py-16 bg-[#002868]">
           <div className="container">
